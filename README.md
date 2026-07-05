@@ -51,7 +51,7 @@ pip install -r requirements.txt
 # Jika TabNet, install juga: pip install torch pytorch-tabnet
 
 # set model type sesuai hasil ekspor (default sudah 'fcnn')
-export MODEL_TYPE=fcnn      # atau: export MODEL_TYPE=tabnet
+$env:MODEL_TYPE="fcnn"      # atau: $env:MODEL_TYPE="tabnet"
 
 uvicorn app:app --host 0.0.0.0 --port 8000
 ```
@@ -74,8 +74,9 @@ Pastikan HP dan komputer berada di jaringan WiFi yang sama.
 
 ```bash
 cd flutter_app
+flutter .
 flutter pub get
-flutter run
+flutter run -d chrome
 ```
 
 4. Isi form data pasien (usia, jenis kelamin, hasil lab: Haematocrit, Haemoglobins, Erythrocyte,
